@@ -17,3 +17,11 @@ services:
       # ports of other containers that use the vpn (to access them locally)
       - "8088:80"
 
+  rtorrent:
+    image: diameter/rtorrent-rutorrent:stable-alpine
+    network_mode: service:expressvpn
+    depends_on:
+      - expressvpn
+    volumes:
+      - "~/test:/downloads"
+
