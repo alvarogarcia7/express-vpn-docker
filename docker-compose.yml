@@ -1,0 +1,19 @@
+services:
+  expressvpn:
+    container_name: expressvpn
+    image: polkaned/expressvpn
+    environment:
+      - ACTIVATION_CODE=${EXPRESSVPN_ACTIVATION_CODE}
+    cap_add:
+      - NET_ADMIN
+    devices: 
+      - /dev/net/tun
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    privileged: true
+    restart: unless-stopped
+    ports:
+      # ports of other containers that use the vpn (to access them locally)
+      - "8088:80"
+
