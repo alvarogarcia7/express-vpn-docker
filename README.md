@@ -13,6 +13,10 @@ EXPRESSVPN_ACTIVATION_CODE=123
 
 It is suggested to change your activation code instead of the sample value.
 
+## Variants
+
+The containers are available as branches on `containers/*`
+
 ## Running it
 
 ```
